@@ -27,14 +27,16 @@ class UserHandler(MongoQueryBuilder):
         """
         try:
             if self.users_collection.find_one(
-                    {"username": request_data.username,
-                     "user_id": {"$ne": request_data.user_id}},
-                    filter_dict={"_id": 0, "user_id": 1},
+                {
+                    "username": request_data.username,
+                    "user_id": {"$ne": request_data.user_id},
+                },
+                filter_dict={"_id": 0, "user_id": 1},
             ):
                 raise CustomError("Username already exists!!")
 
             if self.users_collection.find_one(
-                    {"user_id": user_id}, filter_dict={"_id": 0, "user_id": 1}
+                {"user_id": user_id}, filter_dict={"_id": 0, "user_id": 1}
             ):
                 self.users_collection.update_one(
                     query={"user_id": user_id}, data=request_data.model_dump()
