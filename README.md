@@ -27,9 +27,9 @@ Authentication:
 
 # API Modules
 
-![Screenshot 2024-06-09 132756.png](..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-06-09%20132756.png)
-![Screenshot 2024-06-09 133452.png](..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-06-09%20133452.png)
-![Screenshot 2024-06-09 134536.png](..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-06-09%20134536.png)
+![Auth.png](Auth.png)
+![user.png](user.png)
+![task.png](task.png)
 
 # Setup
 
