@@ -52,8 +52,12 @@ class TaskHandler(MongoQueryBuilder):
             CustomError: If the task_id provided in the request_data is invalid.
         """
         try:
-            if self.task_mongo.find_one(query={"task_id": request_data.task_id}):
+            if task_data := self.task_mongo.find_one(
+                query={"task_id": request_data.task_id}
+            ):
                 request_data.meta = MetaData(
+                    created_at=task_data["meta"]["created_at"],
+                    created_by=task_data["meta"]["created_by"],
                     updated_by=user_id,
                     updated_at=int(datetime.now(timezone.utc).timestamp()),
                 )

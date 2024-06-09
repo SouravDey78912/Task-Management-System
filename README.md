@@ -1,4 +1,4 @@
-# task-management-system
+# Task-Management-System
 A Backend System for Managing Tasks within an Org with Users and Groups as entities.
 
 # Introduction
